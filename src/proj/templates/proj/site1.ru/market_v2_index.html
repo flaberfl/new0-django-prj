@@ -1,0 +1,23 @@
+{% extends './base.html' %}
+{% load static %}
+{% load rupluralize %}
+
+{% block title %}
+    {% if seo.title.strip %}
+    <title>{{ seo.title.strip }}</title>
+    {% elif seo.h1.strip %}
+    <title>{{ seo.h1.strip }}</title>
+    {% else %}
+    <title>Сервис проката № 1 #в Москве#</title>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+{% include './block/header_index.html' %}
+
+{% include './block/expertise.html' %}
+
+{% include './block/sentence.html' %}
+
+{% include './block/category.html' %}
+{% endblock %}

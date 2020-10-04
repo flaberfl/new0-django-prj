@@ -1,0 +1,33 @@
+<section class="expertise">
+    <div class="container">
+        <h2 class="title title--align_center title--pb expertise__title">Почему кататься нужно с нами?</h2>
+        <div class="expertise__items">
+            <div class="expertise__item">
+                <div class="expertise__item-title">
+                    {% if product.partner_user.working_years_1 %}
+                    {{ product.partner_user.working_years_1 }}
+                    {{ product.partner_user.working_years_1|rupluralize:"год,года,лет" }}
+                    {% elif current_site_settings.creation_year %}
+                    с {{ current_site_settings.creation_year|cut:" " }}
+                    {% else %}
+                    5 лет
+                    {% endif %}
+                </div>
+                <div class="expertise__item-text">занимаемся катаниями</div>
+            </div>
+            <div class="expertise__item">
+                <div class="expertise__item-title">1200</div>
+                <div class="expertise__item-text">клиентов ежегодно катаются с нами</div>
+            </div>
+            <div class="expertise__item">
+                <div class="expertise__item-title">9+</div>
+                <div class="expertise__item-text">разных видов техники для проката</div>
+            </div>
+            <div class="expertise__item">
+                <div class="expertise__item-title">5 локаций</div>
+                <div class="expertise__item-text">для катаний</div>
+
+            </div>
+        </div>
+    </div>
+</section>

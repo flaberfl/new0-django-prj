@@ -1,0 +1,27 @@
+{% load rupluralize %}
+<section class="category" id="category">
+    <div class="container">
+        <h2 class="title title--align_center title--pb category__title">
+            {% with service_type_data_list|length as n_service_type_data_list %}
+            {{ n_service_type_data_list }} {{ n_service_type_data_list|rupluralize:"вид,вида,видов" }} катаний
+            {% endwith %}
+        </h2>
+        <div class="category__items">
+            {% for service_type in '123' %}
+            <div class="category__item category__item--kvadro" style="background-image: url({{ service_type.page_data.custom_photos.service_type_bg_image.big }});">
+                <div class="category__item-title fl">Вид услуги {{ service_type }}</div>
+                <div class="category__item-text">
+                    <div class="text-line">Количество маршрутов: 5</div>
+                </div>
+                <div class="category__item-price">
+                    от 2000 руб
+
+                </div>
+                <a href="{% url 'service_list' %}" class="button category__button">
+                    Посмотреть маршруты
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

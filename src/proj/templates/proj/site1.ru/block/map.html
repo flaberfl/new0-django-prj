@@ -1,0 +1,14 @@
+{% load static %}
+<section class="map_section">
+    <div class="container">
+        <h2 class="title title--align_center title--pb info__title">Локации для катаний</h2>
+        <div class="subtitle text-center">{{ service.addresses.0.ADDRESS_TT }}</div>
+        <div class="subtitle text-center">{{ current_site_settings.phone_formatted }}</div>
+        <div class="info__content">
+            <div class="map">
+                {% comment %} map_template_path: {{ map_template_path }} {% endcomment %}
+                {#% include map_template_path %#}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,390 @@
+@media (min-width: 576px) {
+    .container {
+        width: 540px;
+        margin: 0 auto;
+    }
+
+    .gift {
+
+        &__trigger {
+            width: 45%;
+            margin: 22px 0;
+        }
+    }
+
+    .variant {
+
+        &__name {
+            font-size: xx-large;
+            font-weight: 600;
+            margin-bottom: 1.5em;
+            line-height: normal;
+        }
+
+        &__price-info {
+            max-width: 500px;
+            /* background-color: #999; */
+            border-radius: 5px;
+            padding: 45px;
+            box-shadow: 0px 1px 20px #D4D9E1;
+        }
+
+        &__price-info-item {
+            &_sales-price {
+                flex-wrap: nowrap;
+            }
+        }
+    }
+
+    .price-info-item {
+        &_name {
+            width: 60%;
+        }
+    }
+
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .container {
+        width: 720px;
+        margin: 0 auto;
+    }
+
+    .header {
+        &__img {
+            height: 300px;
+            width: auto !important;
+        }
+
+        &__program-img {
+            height: 100%;
+            left: 0px;
+        }
+    }
+
+    .expertise {
+        &__items {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        &__item-title {
+            color: $title;
+        }
+
+        &__item {
+            // width: 200px;
+            width: calc(50% - 10px);
+        }
+    }
+
+    .sentence {
+        &__items {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            width: 45%;
+        }
+    }
+
+    .instruction {
+        &__items {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            width: 40%;
+        }
+    }
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .container {
+        width: 960px;
+        margin: 0 auto;
+    }
+
+    .main-title {
+        font-size: 48px;
+        line-height: 58px;
+    }
+
+    .title {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .header {
+        &__img {
+            height: 350px;
+            width: auto !important;
+        }
+
+        &__program-img {
+            height: 80%;
+            left: -200px;
+        }
+
+
+        &__description {
+            font-size: 2em;
+            line-height: 43px;
+        }
+
+        &__top-inner {
+            display: flex;
+            min-height: 80px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__content {
+            display: grid;
+            grid-template-areas: "h_slider h_text"
+                "h_slider h_botton";
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 1fr 1fr;
+            min-height: 685px;
+        }
+
+        &__text {
+            align-items: center;
+            display: flex;
+        }
+
+        &__button {
+            align-items: center;
+            display: flex;
+
+            &--mb {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .header-decor {
+        grid-area: h_slider;
+        height: 100%;
+        width: 100%;
+    }
+
+    .header-slider {
+        left: 0px;
+    }
+
+    .header__text {
+        grid-area: h_text;
+    }
+
+    .header__button {
+        grid-area: h_botton;
+    }
+
+    .expertise {
+        &__item {
+            // width: 200px;
+            width: calc(25% - 10px);
+        }
+
+        &__item-title {
+            color: $title;
+        }
+    }
+
+    .menu {
+        &__route {
+            display: list-item;
+        }
+
+        &__gift {
+            display: list-item;
+        }
+
+        &__list {
+            justify-content: space-between;
+        }
+
+        &__list-item {
+            margin-left: 50px;
+        }
+    }
+
+    .button {
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .sentence {
+        &__item {
+            width: 30%;
+        }
+    }
+
+    .category {
+        &__items {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            width: 48%;
+            margin: 10px 0;
+        }
+
+        &__item-title {
+            font-size: 2em;
+            line-height: 43px;
+        }
+
+
+        &__item-text {
+            font-size: 24px;
+            line-height: 29px;
+        }
+
+        &__item-icon {
+            margin-right: 40px;
+        }
+
+        &__item-price {
+            margin-top: 60px;
+        }
+
+        &__button {
+            font-size: 24px;
+            margin: 60px 0 11px;
+        }
+
+        &__readmore {
+            display: none;
+        }
+    }
+
+    .instruction {
+        &__item {
+            width: 20%;
+        }
+    }
+
+    .info {
+        &__content {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+        &__content-description {
+            width: 80%;
+        }
+
+        &__content-img {
+            margin: 20px -20px 20px 40px;
+        }
+    }
+
+    .footer {
+        &__content {
+            display: grid;
+            grid-template-areas: "service-info contacts"
+                "documents contacts";
+            grid-template-columns: 40% 300px;
+            grid-template-rows: 1fr auto;
+            justify-content: space-between;
+        }
+
+        &__service-info {
+            grid-area: service-info;
+            height: 100%;
+            width: 100%;
+        }
+
+        &__documents {
+            grid-area: documents;
+        }
+
+        &__contacts {
+            grid-area: contacts;
+            margin-top: 20px;
+        }
+
+        &__title {
+            font-size: 24px;
+            line-height: 29px;
+        }
+    }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .container {
+        width: 1140px;
+        margin: 0 auto;
+    }
+
+    .header {
+        &__img {
+            height: 400px;
+            width: auto !important;
+        }
+
+        &__program-img {
+            height: 90%;
+            left: -160px;
+        }
+    }
+
+    .expertise {
+        &__item {
+            width: 20%;
+        }
+
+        &__item-title {
+            font-size: 48px;
+            line-height: 58px;
+            padding-bottom: 20px;
+            font-weight: bold;
+        }
+    }
+
+    .gift {
+        &__items {
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+
+        &__item {
+            width: 45%;
+        }
+
+        &__content {
+            align-self: center;
+        }
+
+        &__title {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+        &__button {
+            &__right {
+                display: inline-flex;
+            }
+
+            &__bottom {
+                display: none;
+            }
+        }
+    }
+
+
+}

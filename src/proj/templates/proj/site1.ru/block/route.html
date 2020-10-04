@@ -1,0 +1,43 @@
+<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+<section class="category" id="route">
+    <div class="container">
+        <h2 class="title title--align_center title--pb category__title">{{ service_type.n_service_program|default:"9" }} {{ service_type.n_service_program|rupluralize:"маршрут,маршрута,маршрутов" }} для катаний</h2>
+        <div class="category__items">
+            {% for service_program in '12345' %}
+            <div class="category__item category__item--kvadro">
+                <div class="category__item-title"> Услуга {{ service_program }}</div>
+                <div class="category__item-text">
+                    <div class="category__item-text-line">
+                        <div>
+                            <span class="category__item-icon iconify" data-icon="mdi:timer-outline" style="color: #fff;"
+                                data-width="24" data-height="24"></span>
+                        </div> 
+                        <div>Время маршрута: 60 мин.</div>
+                    </div>
+                    <div class="category__item-text-line">
+                        <div>
+                            <span class="category__item-icon iconify" data-icon="bx:bx-map-pin" style="color: #fff;"
+                                data-width="24" data-height="24"></span>
+                        </div>
+                        <div>Длина маршрута: 7 км</div>
+                    </div>
+                    <div class="category__item-text-line">
+                        <div>
+                            <span class="category__item-icon iconify" data-icon="bi:people-circle" style="color: #fff;"
+                                data-width="24" data-height="24"></span>
+                        </div>
+                        <div>Участников: до 5 человек</div>
+                    </div>
+
+                </div>
+                <div class="category__item-price">
+                    от 2000 руб
+                </div>
+                <a href="{% url 'service_detail' %}"
+                    class="button category__button">Посмотреть маршрут</a>
+            </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+</section>

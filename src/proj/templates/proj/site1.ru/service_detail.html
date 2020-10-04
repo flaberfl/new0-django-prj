@@ -1,0 +1,29 @@
+{% extends './base.html' %}
+{% load static %}
+{% load rupluralize %}
+
+{% block title %}
+    {% if seo.title.strip %}
+    <title>{{ seo.title.strip }}</title>
+    {% elif seo.h1.strip %}
+    <title>{{ seo.h1.strip }}</title>
+    {% elif service.name %}
+    <title>{{ service.name }}</title>
+    {% endif %}
+{% endblock %}
+
+
+{% block content %}
+{% include './block/header_program.html' %}
+
+{% include './block/expertise_program.html'%}
+
+{% include './block/gallery.html' %}
+
+{% include './block/price.html' %}
+
+{% include './block/sentence.html' %}
+{% comment %} {% include './block/route.html' %} {% endcomment %}
+
+{% include './block/map.html' %}
+{% endblock %}

@@ -1,0 +1,19 @@
+{% load static %}
+{% if request.current_site_settings.favicon_code %}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{request.scheme}}://{{request.META.HTTP_HOST}}{% static static_prefix|add:'../favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{request.scheme}}://{{request.META.HTTP_HOST}}{% static static_prefix|add:'../favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{request.scheme}}://{{request.META.HTTP_HOST}}{% static static_prefix|add:'../favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{{request.scheme}}://{{request.META.HTTP_HOST}}{% static static_prefix|add:'../favicon/site.webmanifest' %}">
+    <link rel="mask-icon" href="{{request.scheme}}://{{request.META.HTTP_HOST}}{% static static_prefix|add:'../favicon/safari-pinned-tab.svg' %}"
+          color="{{ request.current_site_settings.favicon_colors.0|default:'#ffffff' }}">
+    <meta name="msapplication-TileColor" content="{{ request.current_site_settings.favicon_colors.1 }}">
+    <meta name="theme-color" content="{{ request.current_site_settings.favicon_colors.2 }}">
+{% else %}
+    <link rel="apple-touch-icon" sizes="180x180" href="{{request.scheme}}://{{request.META.HTTP_HOST}}{% static static_prefix|add:'../favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{request.scheme}}://{{request.META.HTTP_HOST}}{% static static_prefix|add:'../favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{request.scheme}}://{{request.META.HTTP_HOST}}{% static static_prefix|add:'../favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{{request.scheme}}://{{request.META.HTTP_HOST}}{% static static_prefix|add:'../favicon/site.webmanifest' %}">
+    <link rel="mask-icon" href="{{request.scheme}}://{{request.META.HTTP_HOST}}{% static static_prefix|add:'../favicon/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ff00ff">
+{% endif %}

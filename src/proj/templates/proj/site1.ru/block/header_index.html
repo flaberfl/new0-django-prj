@@ -1,0 +1,56 @@
+{% load static %}
+{% load rupluralize %}
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="header__top-inner">
+                <div class="logo header__logo">
+                    <a class="logo__link" href="/">
+                        <img class="logo__img" src="{% static static_prefix|add:'../img/logo.jpeg' %}" alt="PROKATANIE">
+                    </a>
+                </div>
+                <nav class="menu">
+                    <ul class="menu__list">
+                        <li class="menu__list-item menu__route">
+                            <a class="menu__link" href="#category">Виды катаний</a>
+                        </li>
+                        <li class="menu__list-item menu__gift">
+                            <a class="menu__link" href="#gift">Подарочные сертификаты</a>
+                        </li>
+
+                        {% if current_site_settings.phone_formatted %}
+                        <li class="menu__list-item menu__phone--right">
+                            <a class="menu__link phone header__phone"
+                                href="{{ current_site_settings.phone_url }}">{{ current_site_settings.phone_formatted }}</a>
+                        </li>
+                        {% endif %}
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="header__content">
+        <div class="header-decor header-decor--bg">
+            <div class="header-slider">
+                <img class="header__img" src="{% static static_prefix|add:'../img/slider/jeep.webp' %}" alt="">
+                <img class="header__img" src="{% static static_prefix|add:'../img/slider/baggi.webp' %}" alt="">
+                <img class="header__img" src="{% static static_prefix|add:'../img/slider/kvadro.webp' %}" alt="">
+            </div>
+        </div>
+        <div class="header__text">
+            <div class="container">
+                <h1 class="main-title header__title">Сервис проката № 1 #в Москве#</h1>
+                <p class="header__description">{{ n_service_program }}
+                    {{ n_service_program|rupluralize:"вариант,варианта,вариантов" }} маршрутов для
+                    катаний ждут вас #в Москве#</p>
+            </div>
+        </div>
+
+        <div class="header__button header__button--mb">
+            <div class="container">
+                <a href="#category" class="button">Выбрать катание</a>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,46 @@
+<section class="price section__padding" id="price">
+    <div class="container">
+        <h2 class="title title--align_center title--pb">Цены</h2>
+        <div class="subtitle text-center">{{ service.description }}</div>
+
+        <div class="variant-list">
+            {% for variant in '12345' %}
+            <div class="variant">
+                <div class="variant__info">
+                    <div class="variant__name fl">Услуга № {{variant}}</div>
+                </div>
+                <div class="variant__price-info">
+                    <div class="variant__price-info-item variant__price-info-item_sales-price">
+                        <div class="price-info-item_name">
+                            Цена
+                        </div>
+                        <div class="price-info-item_value price-info-item_sales-price">
+                            <div class="variant__price">2000 руб</div>
+                        </div>
+                    </div>
+
+                    <div class="variant__price-info-item variant__price-info-item_book">
+                        <div class="price-info-item_name">
+                            Стоимость брони
+                        </div>
+                        <div class="price-info-item_value">
+                            <div class="variant__price">2000 руб</div>
+                        </div>
+                    </div>
+
+                    <div class="variant__price-info-item">
+                        <div class="price-info-item_name">
+                            Оплачивается на месте
+                        </div>
+                        <div class="price-info-item_value">
+                            <div class="variant__price">0 руб</div>
+                        </div>
+                    </div>
+
+                    <a href="#!" class="button price__button sp-button__reserve">Забронировать</a>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+</section>

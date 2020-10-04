@@ -1,0 +1,44 @@
+Настройка окружения для Django
+
+При создании нового проекта или при настройке окружени на новом компе надо:
+
+Удалить текущий venv, предварительно сгенерировать requirements.txt
+ewgenk@ewgenk-kubuntu-K53SJ:~/PycharmProjects/ld$ which python
+/usr/bin/python
+
+Создаем venv - виртуальное окружение для разработки, куда будут ставится пакеты для проекта
+ewgenk@ewgenk-kubuntu-K53SJ:~/PycharmProjects/ld$ python -m venv venv
+
+Перезагружаем VS Code
+
+Переходим в любой файл *.py, чтобы запустилось расширение Python для VS Code
+
+Появился Выбор интерпритатора для текущего проекта. Выбираем тот, который создали
+
+Активируем окружение
+ewgenk@ewgenk-kubuntu-K53SJ:~/PycharmProjects/ld$ source ./venv/bin/activate
+
+Проверяем питон
+(venv) ewgenk@ewgenk-kubuntu-K53SJ:~/PycharmProjects/ld$ which python
+/home/ewgenk/PycharmProjects/ld/venv/bin/python
+
+Нажимаем +, чтобы создать новую командную строку (в командной строке должно быть написано venv в начале)
+
+Устанавливаем пакеты из requirements.txt в виртуальное окружение проекта
+(venv) ewgenk@ewgenk-kubuntu-K53SJ:~/PycharmProjects/ld$ pip install -r requirements.txt 
+
+
+	Если проблемы с компиляцией, например ошибка fatal error: Python.h: Нет такого файла или каталога ,то запускаем sudo apt-get install build-essential libssl-dev libffi-dev python-dev
+
+
+
+
+
+
+
+
+
+
+gulp
+Если говорит, что не может отслеживать много файлов, то написат команду:
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p

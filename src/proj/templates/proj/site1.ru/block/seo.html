@@ -1,0 +1,18 @@
+{% for block in service_type.page_data.seo_blocks %}
+
+<section class="info">
+    <div class="container">
+        <h2 class="title title--align_center title--pb info__title">{{ block.title|safe }}</h2>
+        <div class="info__content">
+            <div class="info__content-img">
+                <img src="{{ block.image_thumb.medium_preview_thumb }}" width="100%" alt="{{ block.title|safe }}">
+            </div>
+            <div class="info__content-description">
+                <div class="info__content-description--text">
+                    {{ block.text|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %}

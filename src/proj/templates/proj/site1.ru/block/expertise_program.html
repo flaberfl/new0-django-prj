@@ -1,0 +1,35 @@
+<section class="expertise">
+    <div class="container">
+        <h2 class="title title--align_center title--pb expertise__title">Подробно о маршруте</h2>
+        <div class="expertise__items">
+            {% if service.program_duration %}
+            <div class="expertise__item">
+                <div class="expertise__item-title">{{service.program_duration}} мин</div>
+                <div class="expertise__item-text">длительность катаний</div>
+            </div>
+            {% endif %}
+            {% if service.track_length_km %}
+            <div class="expertise__item">
+                <div class="expertise__item-title">{{service.track_length_km}} км</div>
+                <div class="expertise__item-text">длина трассы для катаний</div>
+            </div>
+            {% endif %}
+            {% if technics.count_technics %}
+            <div class="expertise__item">
+                <div class="expertise__item-title">{{ technics.count_technics }}
+                </div>
+                <div class="expertise__item-text">
+                    {% name_technics_service_type_item_rupluralize_name technics.count_technics service_type_name.name_technics_service_type %}
+                    на выбор</div>
+            </div>
+            {% endif %}
+            {% if technics.count_seats %}
+            <div class="expertise__item">
+                <div class="expertise__item-title">{{ technics.count_seats }} чел</div>
+                <div class="expertise__item-text">могут быть участниками
+                    маршрута </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

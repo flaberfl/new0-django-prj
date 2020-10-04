@@ -1,0 +1,24 @@
+{% extends './base.html' %}
+{% load static %}
+{% load rupluralize %}
+
+{% block title %}
+    {% if seo.title.strip %}
+    <title>{{ seo.title.strip }}</title>
+    {% elif seo.h1.strip %}
+    <title>{{ seo.h1.strip }}</title>
+    {% elif service.name %}
+    <title>{{ service.name }}</title>
+    {% endif %}
+{% endblock %}
+
+
+{% block content %}
+{% include './block/header_service_type.html' %}
+
+{% include './block/expertise.html' %}
+
+{% include './block/sentence.html' %}
+
+{% include './block/route.html' %}
+{% endblock %}

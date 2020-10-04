@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+{% load rupluralize %}
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% block title %}
+  {% endblock %}
+  <link rel="stylesheet" href="{% static static_prefix|add:'../css/style.min.css' %}">
+
+  <script type='text/javascript' src="{% static static_prefix|add:'/../unitegallery/js/jquery-11.0.min.js' %}"></script>
+
+  {% include './subtemplates/favicon_template.html' %}
+</head>
+
+<body>
+  {% block content %}
+  {% endblock %}
+
+  {% include './block/instruction.html' %}
+
+  {% include './block/gift.html' %}
+
+  {% include './block/seo.html' %}
+
+  {% include './block/footer.html' %}
+
+
+
+  <script src="{% static static_prefix|add:'../js/libs.min.js' %}"></script>
+  <script src="{% static static_prefix|add:'../js/main.js' %}"></script>
+
+  <script type='text/javascript' src="{% static static_prefix|add:'/../unitegallery/js/unitegallery.min.js' %}">
+  </script>
+  <link rel='stylesheet' href="{% static static_prefix|add:'/../unitegallery/css/unite-gallery.css' %}"
+    type='text/css' />
+  <link rel="stylesheet" href="{% static static_prefix|add:'/../unitegallery/css/theme-responsive.css'%}">
+  <script type='text/javascript'
+    src="{% static static_prefix|add:'/../unitegallery/themes/default/ug-theme-default.js' %}">
+  </script>
+  <link rel="stylesheet" href="{% static static_prefix|add:'/../unitegallery/themes/default/ug-theme-default.css'%}">
+
+  <script>
+    jQuery(document).ready(function () {
+      jQuery("#photo-list").unitegallery();
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+@import "vars";
+@import "libs";
+@import "fonts";
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+/*
+тут ниже пиши свои стили
+*/
+
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.container {
+    padding: 0 20px;
+}
+
+
+
+
+
+@import "media";
+
+/*
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+*/

@@ -1,0 +1,13 @@
+{% load static %}
+<section class="gallery section__padding">
+    <div class="container">
+        <h2 class="title title--align_center title--pb gallery__title">Фотографии и видео с катаний</h2>
+        <div id="photo-list" style="margin-left: auto; margin-right: auto;">
+            {% for photo in service.photos %}
+            {% if photo and photo.file_name %}
+            <img src="{{ photo.file_name }}" data=image="{{ photo.file_name }}">
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

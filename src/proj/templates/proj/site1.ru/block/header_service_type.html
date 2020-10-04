@@ -1,0 +1,66 @@
+{% load static %}
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="header__top-inner">
+                <div class="logo header__logo">
+                    <a class="logo__link" href="/">
+                        <img class="logo__img" src="{% static static_prefix|add:'../img/logo.jpeg' %}" alt="PROKATANIE">
+                    </a>
+                </div>
+                <nav class="menu">
+                    <ul class="menu__list">
+                        {% comment %} <li class="menu__list-item">
+                            <a class="menu__link" href="#">Москва</a>
+                        </li> {% endcomment %}
+                        <li class="menu__list-item menu__route">
+                            <a class="menu__link" href="#route">Маршруты</a>
+                        </li>
+                        <li class="menu__list-item menu__gift">
+                            <a class="menu__link" href="#gift">Подарочные сертификаты</a>
+                        </li>
+                        <li class="menu__list-item menu__phone--right">
+                            <a class="menu__link phone header__phone"
+                                href="{{ current_site_settings.phone_url }}">{{ current_site_settings.phone_formatted }}</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="header__content">
+        <div class="header-decor header-decor--bg">
+            <div class="header-image">
+                <img class="header__img" src="{{ service_type.page_data.image_file.big }}"
+                    alt="Катание на квадроциклах">
+            </div>
+        </div>
+        <div class="header__text">
+            <div class="container">
+
+                <h1 class="main-title header__title">
+                    {% if service_type.page_data.h1 %}
+                        {{ service_type.page_data.h1|safe }}
+                    {% else %}
+                        {% if service_type.page_data.title %}
+                            {{ service_type.page_data.title }}
+                        {% else %}
+                            {{ current_site_settings.site_title }} #в Москве#
+                        {% endif %}
+                    {% endif %}
+                </h1>
+
+                <p class="header__description">
+                    {{ service_type.n_service_program }}  {{ service_type.n_service_program|rupluralize:"вариант,варианта,вариантов" }} маршрутов для катаний ждут вас
+                </p>
+                
+            </div>
+        </div>
+
+        <div class="header__button header__button--mb">
+            <div class="container">
+                <a href="#route" class="button">Посмотреть маршруты</a>
+            </div>
+        </div>
+    </div>
+</header>

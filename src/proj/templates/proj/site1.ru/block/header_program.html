@@ -1,0 +1,60 @@
+{% load static %}
+{% load name_technics_service_type_item_rupluralize_name %}
+
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="header__top-inner">
+                <div class="logo header__logo">
+                    <a class="logo__link" href="/">
+                        <img class="logo__img" src="{% static static_prefix|add:'../img/logo.jpeg' %}" alt="PROKATANIE">
+                    </a>
+                </div>
+                <nav class="menu">
+                    <ul class="menu__list">
+                        {% comment %} <li class="menu__list-item">
+                            <a class="menu__link" href="#">Москва</a>
+                        </li> {% endcomment %}
+                        <li class="menu__list-item menu__route">
+                            <a class="menu__link" href="#price">Цены</a>
+                        </li>
+                        <li class="menu__list-item menu__gift">
+                            <a class="menu__link" href="#gift">Подарочные сертификаты</a>
+                        </li>
+                        {% if current_site_settings.phone_formatted %}
+                        <li class="menu__list-item menu__phone--right">
+                            <a class="menu__link phone header__phone"
+                                href="{{ current_site_settings.phone_url }}">{{ current_site_settings.phone_formatted }}</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="header__content">
+        <div class="header-decor">
+            <div class="header-image">
+                <!-- <img class="header__program-img polygon-clip-star" src="img/category/type_kvadro.webp" alt="Катание на квадроциклах"> -->
+                <img class="header__program-img svg-border-mask" src="
+                {{ service.main_photo_file }}" alt="Катание на {{service_type_name.name_technics_service_type}}">
+            </div>
+        </div>
+
+        <div class="header__text">
+            <div class="container">
+                <h1 class="main-title header__title">{{ service.name }}</h1>
+                <p class="header__description">{{ technics.count_technics }}
+                    {% name_technics_service_type_item_rupluralize_name technics.count_technics service_type_name.name_technics_service_type %}
+                    {{ technics.count_technics|rupluralize:'доступен,доступно,доступно' }}
+                    к катанию на этом маршруте</p>
+            </div>
+        </div>
+
+        <div class="header__button header__button--mb">
+            <div class="container">
+                <a href="#price" class="button">Посмотреть цены</a>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,45 @@
+{% load static %}
+<footer class="footer">
+    <div class="container">
+        <div class="footer__content">
+            <div class="footer__service-info">
+                <div class="logo">
+                    <a class="logo__link" href="/">
+                        <img class="logo__img" src="{% static static_prefix|add:'../img/logo.jpeg' %}" alt="Site1">
+                    </a>
+                </div>
+                <div class="footer__service-description">
+                    Сервис Site1 - лучшие предложения на услуги катания на квадроциклах #в Москве#
+                </div>
+                <div class="footer__line"></div>
+            </div>
+            <div class="footer__contacts">
+                <h2 class="title footer__title">Наши контакты</h2>
+                <p>По всем вопросам: <a class="footer__link"
+                        href="mailto:support@site1.ru">support@site1.ru</a></p>
+                <p>По вопросам сотрудничества: <a class="footer__link"
+                        href="mailto:offer@site1.ru">offer@site1.ru</a></p>
+                <p>
+                    {% if current_site_settings.phone_formatted %}
+                    <a class="footer__link"
+                        href="{{ current_site_settings.phone_url }}">{{ current_site_settings.phone_formatted }}</a>
+                    {% endif %}
+
+                </p>
+            </div>
+            <div class="footer__documents">
+                <ul class="footer-menu__list">
+                    {% comment %} <li class="footer-menu__list-item">
+                        <a class="footer-menu__link" href="#">Политика конфиденциальности</a>
+                    </li>
+                    <li class="footer-menu__list-item">
+                        <a class="footer-menu__link" href="#">Оферта</a>
+                    </li> {% endcomment %}
+                    <li class="footer-menu__list-item">
+                        <a class="footer-menu__link sp-button__reserve" href="#!">Заказать звонок</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
